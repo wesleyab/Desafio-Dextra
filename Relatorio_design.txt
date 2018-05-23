@@ -1,0 +1,21 @@
+﻿Relatório sobre o Design do Código do Projeto
+
+Server-side:
+
+No projeto foi adotado as boas práticas do Design Patterns e orientação a objetos da linguagem Java, 
+deixando o código mais enxuto, e organizado, aumentando a qualidade e diminuindo a complexidade do código. 
+ 
+ - Divisões de métodos para diminuir a complexidade de entedimento.
+ - Uso do método DRY para impedir repetição de código.
+ - Uso de javadoc e comentários em pontos importantes, para documentar todas as classes e métodos do projeto, auxiliando no entendimento do algoritmo.
+ - Uso do padrão Camel Case para o nome de Métodos, Funções, Classes e Variáveis
+ - Indentação do código padrão java para manter a organização e um melhor entendimento.
+
+Server-client:
+
+- Indentação do código padrão html e css para manter a organização e um melhor entendimento.
+- Uso de classes para reaproveitar codigo css
+- Documentação de métodos e comentários em pontos importantes nas funções Javascript.
+- Tratamento de exceções.
+
+ 
