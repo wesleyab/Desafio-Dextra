@@ -14,7 +14,7 @@ Instruções para executar a aplicação:
 2) Realizar o build e gerar .war: Clique com o botão direito no projeto > Run As > Maven install. 
 Obs: Neste momento o maven irá verificar se todas as dependências foram baixadas, compilando o projeto e gerando o arquivo .war para ser deployado).
 3) Efetuar o deploy no servidor por meio dos seguintes passos:
-	a) Realizar o download do arquivo tools.zip através do link: https://drive.google.com/open?id=1axwEoFpJeLIU5M0xxGOcAxq6WzElTh7v
+	a) Realizar o download do arquivo tools.zip através do link: https://drive.google.com/open?id=1IQNDwf7sqADqudk9M2Vhd1gt2AFPLPeq
 	b) Após o download, extrair o arquivo tools.zip em C:
 	c) Em seu repositório copie o arquivo WebService.war dentro de WebService>target> para C:\tools\jboss\standalone\deployments.
 	d) Executar o arquivo start_server-side.bat em C:\tools 
