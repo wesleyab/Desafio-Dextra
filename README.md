@@ -1,7 +1,19 @@
 # Desafio Dextra
 
-Repositório com o conjunto de artefatos do projeto desafio.
+2° VERSÃO:
+Server-side: Projeto Web service desenvolvido pela IDE Eclipse com as tecnologias Java8 e SpringBoot, usando o Maven para automação de compilação e gerencia das dependências.
+Client-side: Desenvolvido em HTML, CSS e JavaScript(jQuery para chamada da API via Web service do server-side).
 
+Instruções para executar a aplicação:
+1) Após clonar o repositório, no diretório do projeto executar o comando: mvn clean install
+
+2) Na pasta target do diretório do projeto, executar o comando java -jar atomic-burguer-0.0.1-SNAPSHOT.jar
+
+3) Na pasta front do diretório do projeto, executar o arquivo index.html
+
+________________________________________________________________________________________________________________________________________
+
+1° VERSÃO:
 Server-side: Projeto Web service desenvolvido pela IDE Eclipse com as tecnologias Java8 e JAX-RS empregando a arquitetura Rest, usando o Maven para automação de compilação e gerencia das dependências.
 Client-side: Desenvolvido em HTML, CSS e JavaScript(jQuery para chamada da API via Web service do server-side).
 
