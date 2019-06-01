@@ -9,11 +9,8 @@ public class Lanche implements Comparable<Lanche>{
 	
 	private String descricao;
 	private TipoLanche tipo;
-	private BigDecimal valor;
+	private String valor;
 	
-	public Lanche() {
-	}
-
 	public String getDescricao() {
 		return descricao;
 	}
@@ -30,11 +27,11 @@ public class Lanche implements Comparable<Lanche>{
 		this.tipo = tipo;
 	}
 	
-	public BigDecimal getValor() {
+	public String getValor() {
 		return valor;
 	}
 
-	public void setValor(BigDecimal valor) {
+	public void setValor(String valor) {
 		this.valor = valor;
 	}
 

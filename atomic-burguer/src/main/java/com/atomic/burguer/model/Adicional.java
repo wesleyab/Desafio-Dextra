@@ -51,5 +51,4 @@ public class Adicional {
 			return false;
 		return true;
 	}
-
 }

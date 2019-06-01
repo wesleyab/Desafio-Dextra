@@ -10,7 +10,7 @@ public class Pedido {
 	
 	private TipoLanche lanche;
 	private List<Adicional> adicionais;
-	private BigDecimal total;
+	private String total;
 
 	public TipoLanche getLanche() {
 		return lanche;
@@ -28,11 +28,11 @@ public class Pedido {
 		this.adicionais = adicionais;
 	}
 
-	public BigDecimal getTotal() {
+	public String getTotal() {
 		return total;
 	}
 
-	public void setTotal(BigDecimal total) {
+	public void setTotal(String total) {
 		this.total = total;
 	}
 

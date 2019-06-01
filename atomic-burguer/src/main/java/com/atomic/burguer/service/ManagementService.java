@@ -2,6 +2,7 @@ package com.atomic.burguer.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class ManagementService {
 		List<Ingrediente> ingredientesLanche = new ArrayList<>();
 		ingredientesLanche.addAll(TipoLanche.ingredientes(tipoLanche));
 
-		lanche.setValor(calcularTotal(ingredientesLanche, false));
+		lanche.setValor(formatValor(calcularTotal(ingredientesLanche, false)));
 
 		return lanche;
 	}
@@ -66,7 +67,7 @@ public class ManagementService {
 					}
 				}
 			}
-			resultado.setTotal(calcularTotal(ingredientesLanche, adicional));
+			resultado.setTotal(formatValor(calcularTotal(ingredientesLanche, adicional)));
 		}
 
 		return resultado;
@@ -170,5 +171,11 @@ public class ManagementService {
 			break;
 		}
 		return BigDecimal.ZERO;
+	}
+	
+	private String formatValor(BigDecimal bd) {
+		DecimalFormat df = new DecimalFormat();
+		df.setMinimumFractionDigits(2);
+		return df.format(bd);
 	}
 }

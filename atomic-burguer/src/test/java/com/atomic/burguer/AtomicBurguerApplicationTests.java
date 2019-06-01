@@ -2,6 +2,7 @@ package com.atomic.burguer;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 import org.junit.Before;
@@ -53,22 +54,22 @@ public class AtomicBurguerApplicationTests {
 		BigDecimal xBaconValor = new BigDecimal(6.50).setScale(2, BigDecimal.ROUND_HALF_UP);
 		Lanche actual = mgtService.calcularLanche(xBacon);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(xBaconValor.toString(), actual.getValor().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(xBaconValor), actual.getValor());
 		
 		BigDecimal xBurgerValor = new BigDecimal(4.50).setScale(2, BigDecimal.ROUND_HALF_UP);
 		actual = mgtService.calcularLanche(xBurger);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(xBurgerValor.toString(), actual.getValor().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(xBurgerValor), actual.getValor());
 		
 		BigDecimal xEggValor = new BigDecimal(5.30).setScale(2, BigDecimal.ROUND_HALF_UP);
 		actual = mgtService.calcularLanche(xEgg);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(xEggValor.toString(), actual.getValor().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(xEggValor), actual.getValor());
 		
 		BigDecimal xEggBaconValor = new BigDecimal(7.30).setScale(2, BigDecimal.ROUND_HALF_UP);
 		actual = mgtService.calcularLanche(xEggBacon);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(xEggBaconValor.toString(), actual.getValor().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(xEggBaconValor), actual.getValor());
 	}
 
 	// Teste para calcular valor do pedido sem promoções
@@ -91,7 +92,7 @@ public class AtomicBurguerApplicationTests {
 
 		Pedido actual = mgtService.calcularPedido(pedido);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(expected.toString(), actual.getTotal().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(expected), actual.getTotal());
 		
 		// Sem adicionais
 		pedido.setAdicionais(null);
@@ -99,7 +100,7 @@ public class AtomicBurguerApplicationTests {
 
 		actual = mgtService.calcularPedido(pedido);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(expected.toString(), actual.getTotal().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(expected), actual.getTotal());
 	}
 
 	// Testes para o calculo da promoção: Light
@@ -119,7 +120,7 @@ public class AtomicBurguerApplicationTests {
 
 		Pedido actual = mgtService.calcularPedido(pedido);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(expected.toString(), actual.getTotal().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(expected), actual.getTotal());
 	}
 
 	// Testes para o calculo da promoção: Muita carne
@@ -139,7 +140,7 @@ public class AtomicBurguerApplicationTests {
 
 		Pedido actual = mgtService.calcularPedido(pedido);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(expected.toString(), actual.getTotal().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(expected), actual.getTotal());
 
 		ad.setQtde(6);
 		pedido.setAdicionais(Arrays.asList(ad));
@@ -147,7 +148,7 @@ public class AtomicBurguerApplicationTests {
 		
 		actual = mgtService.calcularPedido(pedido);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(expected.toString(), actual.getTotal().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(expected), actual.getTotal());
 	}
 
 	// Testes para o calculo da promoção: Muito queijo
@@ -167,7 +168,7 @@ public class AtomicBurguerApplicationTests {
 
 		Pedido actual = mgtService.calcularPedido(pedido);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(expected.toString(), actual.getTotal().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(expected), actual.getTotal());
 
 		ad.setQtde(6);
 		pedido.setAdicionais(Arrays.asList(ad));
@@ -175,7 +176,7 @@ public class AtomicBurguerApplicationTests {
 
 		actual = mgtService.calcularPedido(pedido);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(expected.toString(), actual.getTotal().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(expected), actual.getTotal());
 	}
 
 	// Testes para o calculo de todas as promoções
@@ -201,7 +202,13 @@ public class AtomicBurguerApplicationTests {
 		
 		Pedido actual = mgtService.calcularPedido(pedido);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(expected.toString(), actual.getTotal().setScale(2, BigDecimal.ROUND_HALF_UP).toString());
+		Assertions.assertEquals(formatValor(expected), actual.getTotal());
+	}
+	
+	private String formatValor(BigDecimal bd) {
+		DecimalFormat df = new DecimalFormat();
+		df.setMinimumFractionDigits(2);
+		return df.format(bd);
 	}
 
 }
