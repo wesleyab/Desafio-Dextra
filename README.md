@@ -1,6 +1,6 @@
 # Desafio Dextra
 
-2° VERSÃO:
+2° VERSÃO: atomic-burguer
 Server-side: Projeto Web service desenvolvido pela IDE Eclipse com as tecnologias Java8 e SpringBoot, usando o Maven para automação de compilação e gerencia das dependências.
 Client-side: Desenvolvido em HTML, CSS e JavaScript(jQuery para chamada da API via Web service do server-side).
 
@@ -13,30 +13,9 @@ Instruções para executar a aplicação:
 
 ________________________________________________________________________________________________________________________________________
 
-1° VERSÃO:
+1° VERSÃO: WebService
 Server-side: Projeto Web service desenvolvido pela IDE Eclipse com as tecnologias Java8 e JAX-RS empregando a arquitetura Rest, usando o Maven para automação de compilação e gerencia das dependências.
 Client-side: Desenvolvido em HTML, CSS e JavaScript(jQuery para chamada da API via Web service do server-side).
-
-Instruções para executar a aplicação:
-
-1) Após clonar o repositório, vamos importar o projeto maven na IDE Eclipse por meio dos seguintes passos:
-	a) File > Import... > Abra a pasta Maven > Selecione: Existing Maven Projects > Next > Browse > em seu repositório aponte para a pasta "WebService" > Finish.
-	b) Se ainda houver algum erro, clique com o botão direito no projeto > Maven > Update Project > OK. 
-	Obs: Caso falte alguma dependência o maven irá baixar e o Projeto deve ficar sem erros.
-2) Realizar o build e gerar .war: Clique com o botão direito no projeto > Run As > Maven install. 
-Obs: Neste momento o maven irá verificar se todas as dependências foram baixadas, compilando o projeto e gerando o arquivo .war para ser deployado).
-3) Efetuar o deploy no servidor por meio dos seguintes passos:
-	a) Realizar o download do arquivo tools.zip através do link: https://drive.google.com/open?id=1IQNDwf7sqADqudk9M2Vhd1gt2AFPLPeq
-	b) Após o download, extrair o arquivo tools.zip em C:
-	c) Em seu repositório copie o arquivo WebService.war dentro de WebService>target> para C:\tools\jboss\standalone\deployments.
-	d) Executar o arquivo start_server-side.bat em C:\tools 
-	e) Aguarde até aparecer "Started".
-4) Iniciar o client
-	a) Adicionar a extensão do link abaixo para permitir que o JavaScript em uma página da Web faça XMLHttpRequests em outro domínio, não no domínio do qual o JavaScript se originou. 
-extensão: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
-	b) Abra o arquivo index.html em seu repositório > WebService\src\main\webapp usando o navegador Google Chrome.
-
-Depois de executar as instruções a aplicação aparecerá no navegador.
 
 Comportamento esperado da aplicação:
 - É permitido escolher um lanche utilizando o combo box, automaticamente o valor do lanche será mostrado em "Total".
