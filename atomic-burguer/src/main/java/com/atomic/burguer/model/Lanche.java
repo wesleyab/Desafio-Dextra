@@ -1,7 +1,5 @@
 package com.atomic.burguer.model;
 
-import java.math.BigDecimal;
-
 /**
  * Classe responsável pelas informações do lanche.
  */

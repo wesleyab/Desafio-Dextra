@@ -1,6 +1,5 @@
 package com.atomic.burguer.model;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**
