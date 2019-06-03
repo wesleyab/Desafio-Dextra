@@ -1,8 +1,13 @@
 # Desafio Dextra
 
-2° VERSÃO: atomic-burguer
-Server-side: Projeto Web service desenvolvido pela IDE Eclipse com as tecnologias Java8 e SpringBoot, usando o Maven para automação de compilação e gerencia das dependências.
+Project: Atomic-burguer
+Server-side: Projeto Web service desenvolvido com as tecnologias Java8, SpringBoot aplicado conceitos de API restful, Maven para automação de compilação e gerencia das dependências.
+
 Client-side: Desenvolvido em HTML, CSS e JavaScript(jQuery para chamada da API via Web service do server-side).
+
+Testes automatizados:
+- Ferramentas utilizadas: JUnit e Mockito.
+- Ao executar o start_server-side.bat o maven se encarrega em executar os testes da classe ServiceTest.java, construídos em JUnit com Mockito.
 
 Instruções para executar a aplicação:
 1) Após clonar o repositório, no diretório do projeto executar o comando: mvn clean install
@@ -13,20 +18,12 @@ Instruções para executar a aplicação:
 
 ________________________________________________________________________________________________________________________________________
 
-1° VERSÃO: WebService
-Server-side: Projeto Web service desenvolvido pela IDE Eclipse com as tecnologias Java8 e JAX-RS empregando a arquitetura Rest, usando o Maven para automação de compilação e gerencia das dependências.
-Client-side: Desenvolvido em HTML, CSS e JavaScript(jQuery para chamada da API via Web service do server-side).
 
 Comportamento esperado da aplicação:
 - É permitido escolher um lanche utilizando o combo box, automaticamente o valor do lanche será mostrado em "Total".
-- Há possibilidade de adicionar ingredientes no lanche escolhido, pelos checkboxes dos ingredientes adicionais.
-- Quando o ingrediente é selecionado, são exibida as quantidades disponíveis para o mesmo. 
-- O botão "Finalizar pedido" é o resposável por calcular o valor total do pedido, exibindo o valor abaixo em "Total"
-
-Cobertura de testes automatizados:
-- Ferramentas utilizadas: JUnit e Mockito.
-- Ao executar o start_server-side.bat o maven se encarrega em executar os testes da classe ServiceTest.java, construídos em JUnit com Mockito.
-- Também é possível executar os testes pela IDE Eclipse, executando a ServiceTest.java pelo JUnit.
+- Também é possível adicionar ingredientes no lanche escolhido, através dos checkboxes em "Adicionais".
+- Quando o ingrediente é selecionado, são exibidas as quantidades disponíveis para o mesmo. 
+- O botão "Finalizar pedido" é o responsável por calcular o valor do pedido(lanche + adicionais), exibido em "Total".
 
 ## Descrição
 
